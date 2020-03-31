@@ -32,3 +32,5 @@ C:\Users\Athanatos\source\repos\Fast XNB Builder\Fast-XNB-Builder\Fast XNB Build
 C:\Users\Athanatos\source\repos\Fast XNB Builder\Fast-XNB-Builder\Fast XNB Builder\obj\Debug\Fast XNB Builder.csproj.CopyComplete
 C:\Users\Athanatos\source\repos\Fast XNB Builder\Fast-XNB-Builder\Fast XNB Builder\obj\Debug\Fast XNB Builder.exe
 C:\Users\Athanatos\source\repos\Fast XNB Builder\Fast-XNB-Builder\Fast XNB Builder\obj\Debug\Fast XNB Builder.pdb
+C:\Users\Athanatos\source\repos\Fast XNB Builder\Fast-XNB-Builder\Fast XNB Builder\bin\Debug\SharpDX.XInput.dll
+C:\Users\Athanatos\source\repos\Fast XNB Builder\Fast-XNB-Builder\Fast XNB Builder\bin\Debug\SharpDX.XInput.xml

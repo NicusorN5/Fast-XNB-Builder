@@ -15,7 +15,6 @@ namespace Fast_XNB_Builder
     class Program
     {
         static string PathA = Environment.CurrentDirectory + "\\Source\\";
-        static string PathB = Environment.CurrentDirectory + "\\Intermediate\\";
         static string PathC = Environment.CurrentDirectory + "\\Final\\";
         static bool _usingUI = false;
         [STAThread]
@@ -68,7 +67,7 @@ namespace Fast_XNB_Builder
             keyValues.Add("SwapWindingOrder", false);
             keyValues.Add("TextureFormat", "Compressed");
             ContentBuildLogger logger = new Logger();
-            PipelineManager pipeline = new PipelineManager(PathA, PathB, PathC)
+            PipelineManager pipeline = new PipelineManager(PathA, PathC, PathC)
             {
                 RethrowExceptions = true,
                 CompressContent = true,
@@ -91,7 +90,7 @@ namespace Fast_XNB_Builder
             keyValues.Add("MakeSquare", false);
             keyValues.Add("TextureFormat", "Color");
             ContentBuildLogger logger = new Logger();
-            PipelineManager manager = new PipelineManager(PathA, PathB, PathC)
+            PipelineManager manager = new PipelineManager(PathA, PathC, PathC)
             {
                 RethrowExceptions = true,
                 CompressContent = true,
@@ -119,7 +118,6 @@ namespace Fast_XNB_Builder
             else Console.WriteLine("XNB Converter > [OK] Starting operation.");
             Console.WriteLine("XNB Converter > [INFO] Creating temporary directories.");
             Directory.CreateDirectory(PathA);
-            Directory.CreateDirectory(PathB);
             Directory.CreateDirectory(PathC);
             Console.WriteLine("XNB Converter > [INFO] Finished creating temporary directories.");
             string[] files = Directory.EnumerateFiles(folder).ToArray();
