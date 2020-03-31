@@ -37,6 +37,9 @@ namespace Fast_XNB_Builder
                         case "/ui":
                             Start(null);
                             break;
+                        case "/f":
+                            Start(args[i + 1]);
+                            break;
                         default: break;
                     }
                 }
