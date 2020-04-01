@@ -32,6 +32,9 @@ namespace Fast_XNB_Builder
                     {
                         case "/?":
                             Console.WriteLine("Fast XNB Builder is a quick and easy way to convert .X files to be compatible with Monogame.");
+                            Console.WriteLine("Commands:");
+                            Console.WriteLine(" /ui - Shows up the folder browser dialog that allows the user to convert the resources inside a folder.");
+                            Console.WriteLine(" /f \"<folder>\" - Converts resources in the specified folder.");
                             break;
                         case "/ui":
                             Start(null);
