@@ -68,7 +68,7 @@ namespace Fast_XNB_Builder
             keyValues.Add("RotationZ", 0);
             keyValues.Add("Scale", 1);
             keyValues.Add("SwapWindingOrder", false);
-            keyValues.Add("TextureFormat", "Compressed");
+            keyValues.Add("TextureFormat", "NoChange");
             ContentBuildLogger logger = new Logger();
             PipelineManager pipeline = new PipelineManager(PathA, PathC, PathC)
             {
@@ -166,11 +166,70 @@ namespace Fast_XNB_Builder
                 case "dds":
                     ConvertTexture2D(file, PathC + Path.GetFileNameWithoutExtension(file));
                     break;
+                case "ogg":
+                    ConvertSoundOGG(file, PathC + Path.GetFileNameWithoutExtension(file));
+                    break;
+                case "wav":
+                    ConvertSoundWAV(file, PathC + Path.GetFileNameWithoutExtension(file));
+                    break;
+                case "mp3":
+                    ConvertSoundMP3(file, PathC + Path.GetFileNameWithoutExtension(file));
+                    break;
                 default:
                     Console.WriteLine("XNB Converter > [INFO] XNB Converter: Unsuported format found:" + extension);
                     break;
             }
         }
-
+        static void ConvertSoundOGG(string input, string output)
+        {
+            OpaqueDataDictionary keyValues = new OpaqueDataDictionary();
+            keyValues.Add("Importer", "OggImporter");
+            keyValues.Add("Processor", "SoundEffectProcessor");
+            keyValues.Add("Quality", "Best");
+            ContentBuildLogger logger = new Logger();
+            PipelineManager manager = new PipelineManager(PathA, PathC, PathC)
+            {
+                RethrowExceptions = true,
+                CompressContent = true,
+                Logger = logger,
+                Platform = TargetPlatform.Windows,
+                Profile = GraphicsProfile.Reach
+            };
+            manager.BuildContent(input, output, "OggImporter", "SoundEffectProcessor", keyValues);
+        }
+        static void ConvertSoundMP3(string input, string output)
+        {
+            OpaqueDataDictionary keyValues = new OpaqueDataDictionary();
+            keyValues.Add("Importer", "Mp3Importer");
+            keyValues.Add("Processor", "SoundEffectProcessor");
+            keyValues.Add("Quality", "Best");
+            ContentBuildLogger logger = new Logger();
+            PipelineManager manager = new PipelineManager(PathA, PathC, PathC)
+            {
+                RethrowExceptions = true,
+                CompressContent = true,
+                Logger = logger,
+                Platform = TargetPlatform.Windows,
+                Profile = GraphicsProfile.Reach
+            };
+            manager.BuildContent(input, output, "Mp3Importer", "SoundEffectProcessor", keyValues);
+        }
+        static void ConvertSoundWAV(string input, string output)
+        {
+            OpaqueDataDictionary keyValues = new OpaqueDataDictionary();
+            keyValues.Add("Importer", "WavImporter");
+            keyValues.Add("Processor", "SoundEffectProcessor");
+            keyValues.Add("Quality", "Best");
+            ContentBuildLogger logger = new Logger();
+            PipelineManager manager = new PipelineManager(PathA, PathC, PathC)
+            {
+                RethrowExceptions = true,
+                CompressContent = true,
+                Logger = logger,
+                Platform = TargetPlatform.Windows,
+                Profile = GraphicsProfile.Reach
+            };
+            manager.BuildContent(input, output, "WavImporter", "SoundEffectProcessor", keyValues);
+        }
     }
 }
