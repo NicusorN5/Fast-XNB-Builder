@@ -1,4 +1,4 @@
-# Fast XNB Builder
+# Fast XNB Builder by @NicusorN5
  A X to XNB converter made for Monogame!
 
 	Fast XNB Builder is a quick tool to convert files to .XNB (format used by Monogame).
@@ -12,3 +12,5 @@
 	Supported model formats are: .x
 	Supported image formats are: .dds, .png, .bmp.
 	Supported sound formats are: .ogg, .mp3, .wav
+	
+> Added r3 release missing on the original repository.
