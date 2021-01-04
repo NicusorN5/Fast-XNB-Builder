@@ -1,5 +1,5 @@
 # Fast XNB Builder by @NicusorN5
- A X to XNB converter made for Monogame!
+ A .X to .XNB converter made for Monogame!
 
 	Fast XNB Builder is a quick tool to convert files to .XNB (format used by Monogame).
 	Command line arguments are:
